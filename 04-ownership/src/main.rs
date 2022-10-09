@@ -2,6 +2,31 @@
 fn main() {
     //什么是所有权
     {
+        fn takes_ownership(some_string: String) {
+            // some_string 进入作用域
+            println!("{}", some_string);
+        } // 这里，some_string 移出作用域并调用 `drop` 方法。占用的内存被释放
+
+        fn makes_copy(some_integer: i32) {
+            // some_integer 进入作用域
+            println!("{}", some_integer);
+        }
+
+        fn gives_ownership() -> String {
+            let some_string = String::from("yours");
+            some_string
+        }
+
+        fn takes_and_gives_back(a_string: String) -> String {
+            // a_string 进入作用域
+
+            a_string // 返回 a_string 并移出给调用的函数
+        }
+
+        fn calculate_length(s: String) -> (String, usize) {
+            let length = s.len();
+            return (s, length);
+        }
         let s = "hello";
         {
             let s = "world";
@@ -42,30 +67,40 @@ fn main() {
         let (s2, len) = calculate_length(s1);
         println!("The length of '{}' is {}.", s2, len);
     }
-}
+    // 引用和借用
+    {
+        fn calculate_length(s: &String) -> usize {
+            s.len()
+        }
+        fn change(some_string: &mut String) {
+            some_string.push_str(", world");
+        }
 
-fn takes_ownership(some_string: String) {
-    // some_string 进入作用域
-    println!("{}", some_string);
-} // 这里，some_string 移出作用域并调用 `drop` 方法。占用的内存被释放
+        fn no_dangle() -> String {
+            let s = String::from("hello");
+            s
+        }
 
-fn makes_copy(some_integer: i32) {
-    // some_integer 进入作用域
-    println!("{}", some_integer);
-}
+        let s1 = String::from("hello");
+        let len = calculate_length(&s1);
 
-fn gives_ownership() -> String {
-    let some_string = String::from("yours");
-    some_string
-}
+        let mut s = String::from("hello");
+        change(&mut s);
 
-fn takes_and_gives_back(a_string: String) -> String {
-    // a_string 进入作用域
+        let mut s = String::from("hello");
+        {
+            let r1 = &mut s;
+        } // r1 在这里离开了作用域，所以我们完全可以创建一个新的引用
+    
+        let r2 = &mut s;
 
-    a_string // 返回 a_string 并移出给调用的函数
-}
+        let mut s = String::from("hello");
 
-fn calculate_length(s: String) -> (String, usize) {
-    let length = s.len();
-    return (s, length);
+        let r1 = &s; // 没问题
+        let r2 = &s; // 没问题
+        println!("{}, {}", r1, r2);
+
+        let r3 = &mut s; // 没问题
+        println!("{}", r3);
+    }
 }
