@@ -91,7 +91,7 @@ fn main() {
         {
             let r1 = &mut s;
         } // r1 在这里离开了作用域，所以我们完全可以创建一个新的引用
-    
+
         let r2 = &mut s;
 
         let mut s = String::from("hello");
@@ -102,5 +102,44 @@ fn main() {
 
         let r3 = &mut s; // 没问题
         println!("{}", r3);
+    }
+    //切片 Slice 类型
+    {
+        fn first_word(s: &String) -> usize {
+            let bytes = s.as_bytes();
+            for (i, &item) in bytes.iter().enumerate() {
+                if item == b' ' {
+                    return i;
+                }
+            }
+            s.len()
+        }
+
+        fn second_words(s: &String) -> &str {
+            let bytes = s.as_bytes();
+            for (i, &item) in bytes.iter().enumerate() {
+                if item == b' ' {
+                    return &s[0..i];
+                }
+            }
+            return &s[..];
+        }
+
+        let mut s = String::from("hello world");
+        let word = first_word(&s);
+        println!("s length {} ", word);
+        s.clear();
+        println!("s {}", s);
+        println!("s length {} ", word);
+
+        let s = String::from("hello world");
+        let hello = &s[0..5];
+        let world = &s[6..11];
+
+        let mut s = String::from("hello world");
+        let word= second_words(&s);
+        // s.clear(); //error
+        println!("the first word is: {}", word);
+        s.clear();
     }
 }
