@@ -1,6 +1,6 @@
 #![allow(unused)]
 mod math;
-
+use math::add;
 use std::collections::HashMap;
 
 // use std::cmp::Ordering;
@@ -19,4 +19,5 @@ fn main() {
     let mut map = HashMap::new();
     map.insert(1, 2);
     eat_at_restaurant();
+    println!("3 + 4 = {}", add(3, 4));
 }
