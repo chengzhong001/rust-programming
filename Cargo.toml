@@ -1,0 +1,15 @@
+[workspace]
+
+
+members = [
+    "01-hello_cargo",
+    "02-guessing_game",
+    "03-common_programming_concepts",
+    "04-ownership",
+    "05-structs",
+    "06-enums_and_pattern_matching",
+    "07-packages_crate_modules",
+    "08-common_collectios",
+    ""
+]
+
