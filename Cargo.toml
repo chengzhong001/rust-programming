@@ -10,6 +10,6 @@ members = [
     "06-enums_and_pattern_matching",
     "07-packages_crate_modules",
     "08-common_collectios",
-    ""
+    "09-error_handling",
 ]
 
