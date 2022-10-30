@@ -1,6 +1,5 @@
 [workspace]
 
-
 members = [
     "01-hello_cargo",
     "02-guessing_game",
@@ -11,5 +10,6 @@ members = [
     "07-packages_crate_modules",
     "08-common_collectios",
     "09-error_handling",
+    "10-generic_traits_lifetime"
 ]
 
