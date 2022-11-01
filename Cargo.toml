@@ -10,6 +10,7 @@ members = [
     "07-packages_crate_modules",
     "08-common_collectios",
     "09-error_handling",
-    "10-generic_traits_lifetime"
+    "10-generic_traits_lifetime",
+    "11-automated_tests",
 ]
 
