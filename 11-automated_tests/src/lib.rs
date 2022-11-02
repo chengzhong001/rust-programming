@@ -13,6 +13,10 @@ pub fn greeting(name: &str) -> String {
     format!("Hello")
 }
 
+fn internal_adder(a: i32, b: i32) -> i32 {
+    a + b
+}
+
 #[derive(Debug)]
 struct Rectangle {
     width: u32,
@@ -137,6 +141,11 @@ mod tests {
     #[test]
     fn one_hundred() {
         assert_eq!(102, add_two(100));
+    }
+
+    #[test]
+    fn internal() {
+        assert_eq!(4, internal_adder(2, 2));
     }
     
 }
