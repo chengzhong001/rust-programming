@@ -13,5 +13,6 @@ members = [
     "10-generic_traits_lifetime",
     "11-automated_tests",
     "12-command_line_program",
+    "13-iterators_and_closures"
 ]
 
