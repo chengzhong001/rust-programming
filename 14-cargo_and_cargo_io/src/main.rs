@@ -1,3 +1,8 @@
+use cargo_and_cargo_io::kinds::PrimaryColor;
+use cargo_and_cargo_io::utils::mix;
+
 fn main() {
-    println!("Hello, world!");
+    let red = PrimaryColor::Red;
+    let yellow = PrimaryColor::Yellow;
+    mix(red, yellow);
 }
