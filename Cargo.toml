@@ -16,5 +16,6 @@ members = [
     "13-iterators_and_closures",
     "14-cargo_and_cargo_io",
     "15-smart_pointer",
+    "16-fearless_concurrency",
 ]
 

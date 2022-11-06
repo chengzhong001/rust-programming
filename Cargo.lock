@@ -37,6 +37,10 @@ name = "error_handling"
 version = "0.1.0"
 
 [[package]]
+name = "fearless_concurrency"
+version = "0.1.0"
+
+[[package]]
 name = "generic_traits_lifetime"
 version = "0.1.0"
 
