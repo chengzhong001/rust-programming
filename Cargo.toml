@@ -17,5 +17,6 @@ members = [
     "14-cargo_and_cargo_io",
     "15-smart_pointer",
     "16-fearless_concurrency",
+    "17-oop",
 ]
 
