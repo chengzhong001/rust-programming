@@ -18,5 +18,6 @@ members = [
     "15-smart_pointer",
     "16-fearless_concurrency",
     "17-oop",
+    "18-pattern_and_matching",
 ]
 
