@@ -1,5 +1,8 @@
 #![allow(unused)]
 
+fn print_coordinates(&(x, y): &(i32, i32)) {
+    println!("Current location: ({}, {})", x, y);
+}
 fn main() {
     // if let 
 
@@ -22,4 +25,7 @@ fn main() {
 
     // let
     let (x, y, z) = (1,2,3);
+
+    let point = (3, 5);
+    print_coordinates(&point);
 }
