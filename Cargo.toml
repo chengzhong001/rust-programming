@@ -20,6 +20,10 @@ members = [
     "17-oop",
     "18-pattern_and_matching",
     "19-advanced_features",
-    "20-web_server"
+    "19-advanced_features/hello_macro", 
+    "19-advanced_features/hello_macro_derive",
+    "19-advanced_features/pancakes",
+    "20-web_server",
+    
 ]
 
